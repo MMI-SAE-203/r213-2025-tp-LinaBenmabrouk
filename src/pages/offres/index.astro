@@ -3,6 +3,7 @@ import { allMaisons } from '../../backend.mjs';
 import Card from '../../components/Card.astro';
 import Base from '../../layout/Base.astro';
 import { getOffres, filterByPrix } from '../../backend.mjs';
+export const prerender = false
 
 let message = '';
 let offres = [];
