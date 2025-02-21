@@ -1,4 +1,5 @@
 ---
+import FavoriteIcon from "../assets/FavoriteIcon.png";
 const {NomMaison,Prix,Surface,Favori,Adresse} = Astro.props;
 ---
 <script>
@@ -7,6 +8,9 @@ const {NomMaison,Prix,Surface,Favori,Adresse} = Astro.props;
     window.setFavori = setFavori;
 </script>
 <ul>
+    <button class="absolute bottom-0 left-0 p-2 text-white rounded-br-lg" @click="clickFavori">
+        <img src = {FavoriteIcon} alt="Favorite Icon" class="w-6 h-6" />
+    </button>
     <li>{Prix}€</li>
     <li>{NomMaison}</li>
     <li>{Surface}m2</li>

@@ -103,14 +103,7 @@ export async function setFavori(house) {
 }
 
 
-export async function OffreAgents() {
-    try {
-        let agents = await pb.collection('Agent').getFullList({
-            sort: '-created',
-        });
-        return agents;
-    } catch (error) {
-        console.log('Une erreur est survenue en lisant la liste des maisons', error);
-        return [];
-    }
+export async function allAgents() {
+    const records = await pb.collection('Agent').getFullList() ;
+    return records ;
 }
