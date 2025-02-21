@@ -1,6 +1,11 @@
 ---
 const {NomMaison,Prix,Surface,Favori,Adresse} = Astro.props;
 ---
+<script>
+    //@ts-nocheck
+    import { setFavori } from "../backend.mjs";
+    window.setFavori = setFavori;
+</script>
 <ul>
     <li>{Prix}€</li>
     <li>{NomMaison}</li>

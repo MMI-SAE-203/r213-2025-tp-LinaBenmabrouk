@@ -97,3 +97,20 @@ export async function filterByPrix(prixMin, prixMax) {
         return [];
     }
 }
+
+export async function setFavori(house) {
+    await pb.collection('Maison').update(house.id, {favori: !house.Favori});
+}
+
+
+export async function OffreAgents() {
+    try {
+        let agents = await pb.collection('Agent').getFullList({
+            sort: '-created',
+        });
+        return agents;
+    } catch (error) {
+        console.log('Une erreur est survenue en lisant la liste des maisons', error);
+        return [];
+    }
+}
